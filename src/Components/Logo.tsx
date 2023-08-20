@@ -7,7 +7,7 @@ const Logo = () => {
         href="/"
         className="w-16 h-16 bg-[#008970] text-white flex items-center justify-center rounded-full text-2xl font-mono "
       >
-        B
+        BM
       </Link>
     </div>
   );

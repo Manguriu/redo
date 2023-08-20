@@ -103,7 +103,7 @@ export default function Projects() {
   return (
     <>
       <SitionElem />
-      <main className="w-full mt-9 mb-16 flex flex-col items-center justify-center">
+      <main className="w-full mt-9 mb-16 flex flex-col items-center justify-center ">
         <div className=" items-center justify-center w-1/5 grid grid-cols-12 gap-24 ">
           <div className="col-span-12">
             <ProjectsFeatures

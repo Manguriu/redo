@@ -4,7 +4,11 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   const [text] = useTypewriter({
-    words: ["Manguriu Is The Name", "hello"],
+    words: [
+      "Hello im currently Open to work",
+      "Open to Opportunities",
+      "Open-Source",
+    ],
   });
 
   return (
