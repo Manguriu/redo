@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import Image from "next/image";
 
 export default function Hero() {
   const [text] = useTypewriter({
@@ -16,9 +17,11 @@ export default function Hero() {
       <div className="hero-container  rounded-lg p-4 ">
         <div className="flex-1 padding-x">
           <p className="text-4xl mb-5 text-[#008970] "> Hello there,</p>
-          <img
+          <Image
+            width={100}
+            height={100}
             className="relative rounded-full mx-auto object-cover"
-            src="pic.png"
+            src="/pic.png"
             alt=""
           />
           <h1 className=" text-sm text-[#575200] sm:text-4xl 2xl:text-5xl ">

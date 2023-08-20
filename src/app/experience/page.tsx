@@ -74,7 +74,7 @@ export default function Experience() {
             company="Freelance"
             time="May 2022 - Present (1 year 3 months)"
             address=""
-            work="Experienced Freelance Developer JavaScript | React.js & Laravel Specialist | Creating Innovative Web"
+            work="Experienced Freelance Developer JavaScript | React.js | Laravel Specialist | Creating Innovative Web"
             companyLink=""
           />
           <DetailsC
@@ -82,7 +82,7 @@ export default function Experience() {
             company="Freelance"
             time="May 2022 - Present (1 year 3 months)"
             address=""
-            work="Experienced Freelance Developer JavaScript | React.js & Laravel Specialist | Creating Innovative Web"
+            work="Experienced Freelance Developer JavaScript | React.js | Laravel Specialist | Creating Innovative Web"
             companyLink=""
           />
         </ul>
@@ -99,7 +99,7 @@ export default function Experience() {
             time="Jan 2018 - Mar 2021"
             address=""
             work="The coursework comprised a comprehensive range of subjects, such as System Analysis, Database
-            Management, Computer Applications(web & Stand-alone),Programming Languages and Data
+            Management, Computer Applications(web Stand-alone),Programming Languages and Data
             Communication."
             companyLink=""
           />
