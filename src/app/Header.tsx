@@ -27,12 +27,10 @@ export default function Header() {
     const nav = document.querySelector("#navbar");
 
     if (nav) {
-      if (window.scrollY <= 50) {
-        console.log("Adding default style");
+      if (window.scrollY <= 30) {
         nav.classList.remove("scrolled-style");
         nav.classList.add("default-style");
       } else {
-        console.log("Adding scrolled style");
         nav.classList.remove("default-style");
         nav.classList.add("scrolled-style");
       }
@@ -47,7 +45,7 @@ export default function Header() {
   }, []);
 
   return (
-    <nav id="navbar" className="">
+    <nav id="navbar" className="default-style">
       <motion.div
         initial={{
           x: -500,
@@ -75,13 +73,9 @@ export default function Header() {
 
       <nav className="flex justify-center gap-2 items-center">
         <SocialIcon url="https://www.linkedin.com/in/brian-manguriu-3b0b07207/" />
-
         <SocialIcon url="https://github.com/Manguriu" />
-
         <SocialIcon url="https://gitlab.com/Manguriu" />
-
         <SocialIcon url="https://www.reddit.com/user/mainnet_23" />
-
         <SocialIcon url="https://twitter.com/Mainnet14" />
       </nav>
     </nav>
