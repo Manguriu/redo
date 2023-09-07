@@ -2,18 +2,20 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* hero */
-.hero-container {
-  padding-top: 5px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 500px;
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
 
 /* hero resume button */
@@ -94,10 +96,17 @@
   line-height: 1.5rem;
 }
 
+.morph {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
 .default-style {
-  @apply top-0  px-20 py-2 font-medium flex items-center justify-between z-0 text-[#575200];
+  @apply top-0   font-bold flex items-center justify-between z-10 text-black sm:px-16 px-8;
 }
 
-.scrolled-style {
-  @apply text-[#ffffff] sticky top-0  px-20 py-1 font-medium flex items-center justify-between bg-[#575200] z-10;
-}
+/* .scrolled-style {
+  @apply sticky text-[#ffffff]  top-0  px-20 py-1 font-medium flex items-center justify-between  z-10;
+} */

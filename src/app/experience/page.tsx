@@ -27,14 +27,17 @@ const DetailsC = ({ position, company, companyLink, time, address, work }) => {
       >
         <h3 className="capitalize font-bold text-2xl">
           {position} &nbsp;{" "}
-          <a href={companyLink} className="capitalize text-[#61082b]">
+          <a href={companyLink} className="capitalize text-cyan-600">
             @{company}
           </a>
         </h3>
-        <span className="capitalize font-medium ">
-          {time} | {address}
+        <span className="capitalize font-medium text-slate-300 xs:text-sm">
+          {time} | {address}orange
         </span>
-        <p className="font-medium w-full subtitle"> {work}</p>
+        <p className="font-medium w-full subtitle text-slate-300 md:text-sm ">
+          {" "}
+          {work}
+        </p>
       </motion.div>
     </li>
   );
@@ -49,13 +52,13 @@ export default function Experience() {
   return (
     <div className="my-4 mt-4 ">
       <SitionElem />
-      <h2 className="font-bold text-4xl mb-32  text-[#575200] w-full text-center">
+      <h2 className="font-bold text-4xl mb-32 text-slate-400  w-full text-center">
         Experience
       </h2>
-      <div ref={ref} className="w-[75%] mx-auto relative">
+      <div ref={ref} className="w-[75%] mx-auto relative ">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className=" absolute left-9 top-0 w-[4px] h-full bg-orange-800 origin-top "
+          className=" absolute left-9 top-0 w-[4px] h-full bg-slate-300 origin-top "
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
           <DetailsC
@@ -88,8 +91,8 @@ export default function Experience() {
         </ul>
       </div>
       {/* new */}
-      <div className="w-[75%] mx-auto relative">
-        <h2 className="font-bold text-4xl mb-32  mt-32 text-[#575200] w-full text-center">
+      <div className="w-[75%] mx-auto relative ">
+        <h2 className="font-bold text-4xl mb-32  mt-32 text-slate-400 w-full text-center">
           Education
         </h2>
         <ul>

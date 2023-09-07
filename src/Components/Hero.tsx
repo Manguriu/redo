@@ -1,47 +1,62 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import Image from "next/image";
+import { StaticImageData } from "next/image";
+import HeroPic from "./HeroPic";
+
+const skills = [
+  {
+    pic: "/skills/Sql.png",
+    skillsPic: "/skills/Sql.png",
+  },
+  {
+    pic: "/skills/next.png",
+    skillsPic: "/skills/next.png",
+  },
+  {
+    pic: "/skills/javascript.png",
+    skillsPic: "/skills/javascript.png",
+  },
+  {
+    pic: "/skills/react.png",
+    skillsPic: "/skills/react.png",
+  },
+  {
+    pic: "/skills/laravel.png",
+    skillsPic: "/skills/laravel.png",
+  },
+];
 
 export default function Hero() {
   const [text] = useTypewriter({
     words: [
       "Hello im currently Open to work",
       "Open to Opportunities",
-      "Open-Source",
+      "Open-Source contributer",
     ],
   });
+  const bigimg1 = "skills/code.png";
+  const [bigImage, setBigImage] = useState(bigimg1);
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center   justify-center text-center">
-      <div className="hero-container  rounded-lg p-4 ">
-        <div className="flex-1 padding-x">
-          <p className="text-4xl mb-5 text-[#008970] "> Hello there,</p>
-          <Image
-            width={100}
-            height={100}
-            className="relative rounded-full mx-auto object-cover"
-            src="/pic.png"
-            alt=""
-          />
-          <h1 className=" text-sm text-[#575200] sm:text-4xl 2xl:text-5xl ">
-            <br />
-            My Name is{" "}
-            <span className="font-extrabold  text-[#008970]">
-              Brian Manguriu
-            </span>
-          </h1>
-          <h2 className="text-sm text-[#575200] uppercase font-extrabold mt-4 pb-2 tracking-[15px]">
-            Software developer
-          </h2>
+    <section className=" w-full flex xl:flex-row flex-col justify-center  gap-10 p-1 max-container">
+      <div className="relative  xl:w-2/5 flex flex-col mt-[15rem] max-xl:mt-[5rem] items-start max-xl:sm:px-2 max-xl:px-2 pt-1 md:px-6 ">
+        <p className="text-4xl text-cyan-500 font-palanquin"> Hello there...</p>
+        <h1 className="mt-10 text-6xl max-sm:text-[62px] max-sm:leading-[72px] font-bold font-montserrat text-slate-400">
+          <span className="  relative pr-10  ">My Name Is</span> <br />
+          <span className="text-cyan-600 inline-block mt-3">
+            Brian Manguriu
+          </span>
+        </h1>
 
-          <p className="text-lg text-[#575200] sm:text-xl text-black-800 font-light mt-5">
-            {text}
-            <Cursor cursorColor="red" />
-          </p>
-        </div>
-
-        <div className="text-center text-white py-1 mt-10 font-semibold">
+        <p className="text-lg text-slate-400 sm:text-3xl text-black-800 font-palanquin mt-5">
+          {text}
+          <Cursor cursorColor="black" />
+        </p>
+        <div className="text-center text-slate-500 py-1 mt-10 font-semibold">
           <a
             href="https://drive.google.com/file/d/11TuqYkJHmzkwOhPIvYI97LwRtD8dwnnM/view?usp=drive_link"
             media="print and (resolution:300dpi)"
@@ -67,6 +82,31 @@ export default function Hero() {
           </a>
         </div>
       </div>
-    </div>
+      <div className=" relative  flex flex-col mt-[6rem] max-xl:mt-[2rem] items-center flex-1 xl:min-h-screen max-xl:py-20">
+        <img
+          width={300}
+          height={300}
+          className="relative mx-auto object-cover p-1 hover:scale-105 transform transition duration-300 ease-in-out"
+          src={`${bigImage}`}
+        />
+
+        <h2 className="text-sm font-palanquin text-slate-400 uppercase font-extrabold mt-4 pb-2 tracking-[5px] justify-center items-center">
+          // Software developer //
+        </h2>
+        <div className="grid grid-cols-4 sm:gap-4 absolute mt-[25rem] sm:left-[10%] max-sm:px-6 ">
+          {skills.map((skill, index) => (
+            <div key={index}>
+              <HeroPic
+                imgURL={skill}
+                changeImage={(skill: React.SetStateAction<StaticImageData>) =>
+                  setBigImage(`${skill}`)
+                }
+                bigImage={bigImage}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

@@ -3,13 +3,17 @@ import React from "react";
 import Script from "next/script";
 import { Hero } from "@/Components/export";
 import { SitionElem } from "@/Components/export";
+import Footer from "./Footer";
 
 export default function Home() {
   return (
-    <div className=" z-0">
-      <section id="hero" className="snap-start">
+    <main className=" relative">
+      <section className="sm:pb-2 pb-2 ">
         <SitionElem />
         <Hero />
+      </section>
+      <section className="bg-slate-400 sm:mt-[5rem] xl:mt-[2rem] ">
+        <Footer />
       </section>
 
       <Script id="tawk-to-script">{`
@@ -22,6 +26,6 @@ export default function Home() {
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
     })()`}</Script>
-    </div>
+    </main>
   );
 }

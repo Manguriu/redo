@@ -12,7 +12,7 @@ import simple from "../../../public/simple.png";
 const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
   return (
     <div>
-      <article className="p-6 w-full flex items-center justify-between rounded-3xl border border-solid border-black bg-white shadow-2xl">
+      <article className="p-6 w-full flex items-center justify-between rounded-3xl  shadow-2xl morph">
         <Link
           href={link}
           target="_black"
@@ -27,25 +27,28 @@ const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
           />
         </Link>
         <div className="w-1/2 flex flex-col items-start justify-center pl-6">
-          <span className="font-medium  text-xl text-[#61082b]">{type}</span>
+          <span className="font-medium  text-xl text-cyan-500">{type}</span>
           <Link
             href={link}
             target=""
             className="hover:underline underline-offset-2"
           >
-            <h2 className="my-2 w-full text-left text-4xl font-bold">
+            <h2 className="my-2 w-full text-left text-4xl font-bold text-slate-400">
               {title}
             </h2>
           </Link>
-          <p className="my-2 font-medium">{summary}</p>
+          <p className="my-2 font-medium text-slate-400">{summary}</p>
           <div className="mt-2 flex items-center gap-5">
             <Link href={github} target="" className="w-10">
-              <SocialIcon url="https://github.com" />
+              <SocialIcon
+                url="https://github.com"
+                className="bg-white rounded-full"
+              />
             </Link>
             <Link
               href={link}
               target=""
-              className="ml-4 rounded-lg bg-[#164b60] text-white p-2 px-6 text-lg font-semibold"
+              className="ml-4 rounded-lg bg-cyan-500 text-white p-2 px-6 text-lg font-semibold"
             >
               Go to Project
             </Link>
@@ -56,54 +59,11 @@ const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
   );
 };
 
-const OProjects = ({ type, title, link, img, github }) => {
-  return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-green bg-white p-6 relative ">
-      <Link
-        href={link}
-        target="_black"
-        className="w-full cursor-pointer overflow-hidden rounded-lg"
-      >
-        <Image
-          width={700}
-          height={700}
-          src={img}
-          alt={title}
-          className="w-full h-auto"
-        />
-      </Link>
-      <div className="w-full flex flex-col items-start justify-center mt-4">
-        <span className="font-medium  text-xl text-[#61082b]">{type}</span>
-        <Link
-          href={link}
-          target=""
-          className="hover:underline underline-offset-2"
-        >
-          <h2 className="my-2 w-full text-left text-2xl font-bold">{title}</h2>
-        </Link>
-
-        <div className="mt-2 flex items-center justify-between w-full">
-          <Link href={github} target="" className="w-5">
-            <SocialIcon url="https://github.com" />
-          </Link>
-          <Link
-            href={link}
-            target=""
-            className="ml-4 hover:text-[green] text-[#164b60] rounded-lg font-semibold underline"
-          >
-            Go to..
-          </Link>
-        </div>
-      </div>
-    </article>
-  );
-};
-
 export default function Projects() {
   return (
     <>
       <SitionElem />
-      <main className="w-full mt-9 mb-16 flex flex-col items-center justify-center ">
+      <section className="w-full mt-9 mb-16 flex flex-col items-center justify-center ">
         <div className=" items-center justify-center w-1/5 grid grid-cols-12 gap-24 ">
           <div className="col-span-12">
             <ProjectsFeatures
@@ -119,24 +79,29 @@ export default function Projects() {
               github="https://github.com/Manguriu/ecom-react-app"
             />
           </div>
-          <div className="col-span-6">
-            <OProjects
-              title=" Test Data"
-              type="Project"
+          <div className="col-span-12">
+            <ProjectsFeatures
+              title="Test Data"
+              type="Featured project"
               img={simple}
+              summary="dynamic user
+              interactions."
               link="https://next-js-first-xi.vercel.app/"
               github="https://github.com/Manguriu/NextJs-first-"
             />
           </div>
-          <div className="col-span-6">
-            <OProjects
+          <div className="col-span-12">
+            <ProjectsFeatures
               title="Simple Billing App"
-              type="Project"
+              type="Featured project"
               img={billing}
+              summary=" gateway integration, dynamic user
+              interactions."
               link="https://billingsitealpha.netlify.app"
               github="https://github.com/Manguriu/Money-tracker"
             />
           </div>
+
           <div className="col-span-12">
             <ProjectsFeatures
               title=" Ecommerce App Backend"
@@ -151,7 +116,7 @@ export default function Projects() {
             />
           </div>
         </div>
-      </main>
+      </section>
     </>
   );
 }

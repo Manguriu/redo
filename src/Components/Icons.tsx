@@ -13,7 +13,7 @@ const Icons = (reference) => {
           cx="75"
           cy="50"
           r="20"
-          className="stroke-rose-950 stroke-1 fill-none"
+          className="stroke-cyan-600 stroke-1 fill-none"
         />
         <motion.circle
           cx="75"
@@ -28,7 +28,7 @@ const Icons = (reference) => {
           cx="75"
           cy="50"
           r="10"
-          className=" animate-pulse stroke-1 fill-rose-950"
+          className=" animate-pulse stroke-1 fill-cyan-500"
         />
       </svg>
     </figure>

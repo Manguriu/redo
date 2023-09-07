@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import SitionElem from "@/Components/SitionElem";
 import Experience from "../experience/page";
+import Footer from "../Footer";
 export default function About() {
   return (
     <>
@@ -12,11 +13,11 @@ export default function About() {
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
         <div className="flex flex-col lg:flex-row justify-between gap-8 ">
           <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-[#575200] pb-4">
-              About Me...
+            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-2 text-center ">
+              About Me
             </h1>
             <div className="shadow-xl p-6">
-              <p className="font-normal text-base leading-6 subtitle-p text-black ">
+              <p className="font-normal text-base leading-6 subtitle-p text-slate-300 ">
                 As an experienced software developer, I have a strong background
                 in coding, testing, and maintaining software systems. Throughout
                 my career, I have developed a versatile skill set that allows me
@@ -32,7 +33,7 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="lg:w-6/12 p-[12rem]">
+          <div className="lg:w-6/12 p-[12rem] max-lg:hidden">
             <motion.img
               initial={{
                 x: -200,
@@ -45,8 +46,8 @@ export default function About() {
                 x: 0,
                 opacity: 1,
               }}
-              className="w-full h-full rounded-lg"
-              src="https://media.licdn.com/dms/image/C5603AQGXddOb1vIPOQ/profile-displayphoto-shrink_200_200/0/1648492890472?e=1697673600&v=beta&t=0Umyuq8xlpdOPlEUanjQwBo8urPF8izPjXjqoq77TFY"
+              className="w-full h-full  rounded-lg"
+              src="/skills/code1.png"
               alt="my pic"
             />
           </div>
@@ -54,11 +55,11 @@ export default function About() {
 
         <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
           <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-[#575200] pb-4">
+            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-4 text-center">
               My Story
             </h1>
             <div className="shadow-xl p-5">
-              <p className="font-normal text-base leading-6 subtitle-p">
+              <p className="font-normal text-base leading-6  text-slate-300">
                 I'm on a journey of always learning and coming up with new
                 ideas. Each project I work on is like a blank canvas where I
                 create new and clever solutions. As technology gets better, I
@@ -74,14 +75,14 @@ export default function About() {
             <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-xl rounded-md">
               <div className="p-4 pb-6 flex justify-center flex-col items-center">
                 <Image
-                  className="md:block hidden"
+                  className="md:block hidden scale-75 "
                   width={200}
                   height={100}
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAclBMVEUAAAD////JycklJSVDQ0Pi4uK4uLhaWlocHByCgoJ+fn5AQEDx8fG8vLy0tLQzMzNOTk75+fmJiYk5OTmPj48ODg6amprOzs5nZ2fd3d12dnZsbGzr6+uqqqqhoaHU1NRTU1MXFxcsLCxhYWEjIyMTExM+Z152AAADFElEQVR4nO3ba3OiMBiG4byIigdUxANSz63//y8u1lMSYLfO6lDIfX1ohdCdzDOSvAmsUgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAqgXzqntQH8G46h7USLfqDtRIyk34Yx+TqntQH/606h7UyKjqDtRIeKy6B/Wx6FXdg/pIvKp7UB/Buuoe1MiacvTHQvdmwqCzyZ88dkzhh9ra0fSGKgmv7aPR7cJmj/gtkW3upC87T7dM1cS6LBZfJctr+zC6XdjsGrUlngzsk77kFzEzMYao4UI78Nqv79hv1JI0zM1qvhSM3btIOwhXepM7YU1VZA9bhWGdokdZ1ZeW3uRSWF37risMK7vsNiK1pG+0uBSWGg3Nk8VhqY3Elw/rpdngTljn2X5o3oglYan2ZXQbibXh505Y5zvKmv7KwhrLudpKJLHOuxWWWhg3YllY2cD+oQLJle6OhaXaegK+7Esu90St8utn18I6yv5x0pdtv6fRmoZRQcHqWlhqqtWcvgx1kVatz2SX/0ecC0vtOveTRcudi7GsJL9Ydi+sQD5vJ0sH+HPxEObXku6FpdL7jVga1kbG2bCVG+EdDEt54fVDWVjJ94JnkqsdXAxLRddqsySsQC5L6VlWbRnyYTXzEZkR1qdcfpeEtbpVrksJjAYzrMUgDhfh1+v6+GuYGwidy1enOKztfY6cR2b9YIUVT1MVN/FFJGu3ZZiefxaGtZdHufVpbjLb36zDqJmb8VZYk+8bsTAsoxrdyF470sOaq4V/yhJLX9fHX8Pex9ueb8SisDw56IcrfeV9D2u+VWHinXqbSWf/2n7+CnZYap2ew0rjge6YzYCJ9Xfas/vHN6urWv2sZu32/Lf2uiIte/UyllMWliX0xd6nT2V2/+xKnaW+7NccZ0s1/wpMpyBfCQSPZxaHQ67VFV4jZ7J3aQf/vgZXA967esK02a8svNgorroHdeLeu1f/YcCM+IS0kSX4u/DVesLBfkaPv2jk9t3bxPznuCc0cRsdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeIc/sjcZ6amqhIUAAAAASUVORK5CYII="
                   alt="next"
                 />
 
-                <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
+                <p className="font-medium text-xl leading-5 text-white mt-4">
                   Next.js
                 </p>
               </div>
@@ -94,7 +95,7 @@ export default function About() {
                   alt="react"
                 />
 
-                <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
+                <p className="font-medium text-xl leading-5 text-white mt-4">
                   React.js
                 </p>
               </div>
@@ -107,7 +108,7 @@ export default function About() {
                   alt="laravel"
                 />
 
-                <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
+                <p className="font-medium text-xl leading-5 text-white mt-4">
                   Laravel
                 </p>
               </div>
@@ -120,7 +121,7 @@ export default function About() {
                   alt="javascript"
                 />
 
-                <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
+                <p className="font-medium text-xl leading-5 text-white mt-4">
                   Javascript
                 </p>
               </div>
@@ -131,6 +132,7 @@ export default function About() {
           <Experience />
         </div>
       </div>
+      <Footer />
     </>
   );
 }

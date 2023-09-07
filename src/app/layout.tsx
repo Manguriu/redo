@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Footer from "./Footer";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export const metadata: Metadata = {
   title: "Manguriu",
@@ -15,10 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="bg-[#000000]/80 ">
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
