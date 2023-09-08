@@ -104,7 +104,7 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .default-style {
-  @apply top-0   font-bold flex items-center justify-between z-10 text-black sm:px-16 px-8;
+  @apply top-0 font-bold flex items-center justify-between z-10 text-black sm:px-16 px-8 max-sm:text-[10px];
 }
 
 /* .scrolled-style {

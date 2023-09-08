@@ -44,8 +44,11 @@ export default function Hero() {
   return (
     <section className=" w-full flex xl:flex-row flex-col justify-center  gap-10 p-1 max-container">
       <div className="relative  xl:w-2/5 flex flex-col mt-[15rem] max-xl:mt-[5rem] items-start max-xl:sm:px-2 max-xl:px-2 pt-1 md:px-6 ">
-        <p className="text-4xl text-cyan-500 font-palanquin"> Hello there...</p>
-        <h1 className="mt-10 text-6xl max-sm:text-[62px] max-sm:leading-[72px] font-bold font-montserrat text-slate-400">
+        <p className="text-4xl text-cyan-500 font-palanquin max-sm:text-[20px]">
+          {" "}
+          Hello there...
+        </p>
+        <h1 className="mt-10 text-6xl max-sm:text-[40px] max-sm:leading-[72px] font-bold font-montserrat text-slate-400">
           <span className="  relative pr-10  ">My Name Is</span> <br />
           <span className="text-cyan-600 inline-block mt-3">
             Brian Manguriu
@@ -90,7 +93,7 @@ export default function Hero() {
           src={`${bigImage}`}
         />
 
-        <h2 className="text-sm font-palanquin text-slate-400 uppercase font-extrabold mt-4 pb-2 tracking-[5px] justify-center items-center">
+        <h2 className="text-sm font-palanquin text-slate-400 uppercase font-extrabold mt-4 pb-2 tracking-[5px] justify-center items-center max-sm:text-[8px]">
           // Software developer //
         </h2>
         <div className="grid grid-cols-4 sm:gap-4 absolute mt-[25rem] sm:left-[10%] max-sm:px-6 ">

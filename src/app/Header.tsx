@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <nav
       id="navbar"
-      className="default-style rounded-xl mt-4 max-container text-lg mb-2 sm:mb-6 max-lg:justify-center  bg-slate-400"
+      className="default-style rounded-xl mt-4 max-container text-lg mb-2 sm:mb-6 max-lg:justify-center bg-slate-400"
     >
       <motion.div
         initial={{
@@ -57,22 +57,22 @@ export default function Header() {
         <CustomLink
           href="/"
           title="Home"
-          className="mr-4 hover:text-cyan-600 "
+          className="mr-4 max-sm:mr-2 hover:text-cyan-600 "
         />
         <CustomLink
           href="/about"
           title="About"
-          className="mx-4 hover:text-cyan-600"
+          className="mx-4 max-sm:mx-2 hover:text-cyan-600"
         />
         <CustomLink
           href="/projec"
           title="Projects"
-          className="ml-4 hover:text-cyan-600"
+          className="ml-4 max-sm:ml-2 hover:text-cyan-600"
         />
         <CustomLink
           href="/contacts"
           title="Contacts"
-          className="mx-4 hover:text-cyan-600"
+          className="mx-4 max-sm:mx-2 hover:text-cyan-600"
         />
       </nav>
     </nav>
