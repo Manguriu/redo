@@ -13,19 +13,24 @@ module.exports = {
       },
       screens: {
         sm: "576px",
-        // => @media (min-width: 640px) { ... }
+        // => @media (min-width: 640px)
+        // Small devices (landscape phones, 576px and up)
 
         md: "768px",
-        // => @media (min-width: 768px) { ... }
+        // => @media (min-width: 768px)
+        // Medium devices (tablets, 768px and up)
 
-        lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
+        lg: "992px",
+        // => @media (min-width: 1024px)
+        // Large devices (desktops, 992px and up)
 
-        xl: "1280px",
-        // => @media (min-width: 1280px) { ... }
+        xl: "1200px",
+        // => @media (min-width: 1280px)
+        // X-Large devices (large desktops, 1200px and up)
 
-        "2xl": "1536px",
-        // => @media (min-width: 1536px) { ... }
+        "2xl": "1400px",
+        // => @media (min-width: 1536px)
+        // XX-Large devices (larger desktops, 1400px and up)
       },
     },
   },

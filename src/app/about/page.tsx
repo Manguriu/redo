@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import SitionElem from "@/Components/SitionElem";
 import Experience from "../experience/page";
 import Footer from "../Footer";
@@ -33,33 +32,13 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="lg:w-6/12 p-[12rem] max-lg:hidden">
-            <motion.img
-              initial={{
-                x: -200,
-                opacity: -1,
-              }}
-              transition={{
-                duration: 1.5,
-              }}
-              whileInView={{
-                x: 0,
-                opacity: 1,
-              }}
-              className="w-full h-full  rounded-lg"
-              src="/skills/code1.png"
-              alt="my pic"
-            />
-          </div>
-        </div>
 
-        <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
           <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-4 text-center">
+            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-2 text-center ">
               My Story
             </h1>
-            <div className="shadow-xl p-5">
-              <p className="font-normal text-base leading-6  text-slate-300">
+            <div className="shadow-xl p-6">
+              <p className="font-normal text-base leading-6 subtitle-p text-slate-300 ">
                 I'm on a journey of always learning and coming up with new
                 ideas. Each project I work on is like a blank canvas where I
                 create new and clever solutions. As technology gets better, I
@@ -67,10 +46,13 @@ export default function About() {
                 really great software experiences. Looking back at my experience
                 as a software developer, it's a story of working hard, being
                 able to change when needed, and never giving up on making things
-                really, really good.
+                really, really good..
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
           <div className="w-full lg:w-8/12 lg:pt-8 p-5 pt-2">
             <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-xl rounded-md">
               <div className="p-4 pb-6 flex justify-center flex-col items-center">
@@ -128,7 +110,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="mt-[20%]">
+        <div className="mt-[10%]">
           <Experience />
         </div>
       </div>
