@@ -8,11 +8,11 @@ import Footer from "./Footer";
 export default function Home() {
   return (
     <main className=" relative">
-      <section className="sm:pb-2 pb-2 ">
+      <section className="sm:pb-2 pb-2 max-lg:mb-[10rem]">
         <SitionElem />
         <Hero />
       </section>
-      <section className="bg-slate-400 sm:mt-[5rem] xl:mt-[2rem] ">
+      <section className="bg-slate-400 max-sm:mt-[5rem] xl:mt-[2rem] ">
         <Footer />
       </section>
 

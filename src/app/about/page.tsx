@@ -9,14 +9,14 @@ export default function About() {
     <>
       <SitionElem />
 
-      <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
+      <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6  w-full ">
         <div className="flex flex-col lg:flex-row justify-between gap-8 ">
           <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-2 text-center ">
+            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-2 text-center max-sm:text-[20px]">
               About Me
             </h1>
-            <div className="shadow-xl p-6">
-              <p className="font-normal text-base leading-6 subtitle-p text-slate-300 ">
+            <div className="shadow-xl lg:p-6">
+              <p className="font-normal text-sm max-sm:text-[12px] subtitle-p text-slate-300 ">
                 As an experienced software developer, I have a strong background
                 in coding, testing, and maintaining software systems. Throughout
                 my career, I have developed a versatile skill set that allows me
@@ -34,11 +34,11 @@ export default function About() {
           </div>
 
           <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-2 text-center ">
+            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-cyan-600 pb-2 text-center max-sm:text-[20px] ">
               My Story
             </h1>
-            <div className="shadow-xl p-6">
-              <p className="font-normal text-base leading-6 subtitle-p text-slate-300 ">
+            <div className="shadow-xl lg:p-6">
+              <p className="font-normal text-md max-sm:text-[12px] subtitle-p text-slate-300 max-sm:mx-auto ">
                 I'm on a journey of always learning and coming up with new
                 ideas. Each project I work on is like a blank canvas where I
                 create new and clever solutions. As technology gets better, I
@@ -52,7 +52,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
+        <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12 max-lg:hidden">
           <div className="w-full lg:w-8/12 lg:pt-8 p-5 pt-2">
             <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-xl rounded-md">
               <div className="p-4 pb-6 flex justify-center flex-col items-center">
@@ -114,7 +114,6 @@ export default function About() {
           <Experience />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

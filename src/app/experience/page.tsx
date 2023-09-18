@@ -9,7 +9,7 @@ const DetailsC = ({ position, company, companyLink, time, address, work }) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-5 w-[60%] mx-auto flex flex-col items-center justify-between"
+      className="my-8 first:mt-0 last:mb-5 w-[60%] mx-auto flex flex-col items-center justify-between "
     >
       <Icons reference={ref} />
       <motion.div
@@ -25,16 +25,16 @@ const DetailsC = ({ position, company, companyLink, time, address, work }) => {
           opacity: 1,
         }}
       >
-        <h3 className="capitalize font-bold text-2xl">
+        <h3 className="capitalize font-bold text-2xl  max-sm:text-[15px]">
           {position} &nbsp;{" "}
           <a href={companyLink} className="capitalize text-cyan-600">
             @{company}
           </a>
         </h3>
-        <span className="capitalize font-medium text-slate-300 xs:text-sm">
+        <span className="capitalize font-medium text-slate-300 xs:text-sm max-sm:text-[10px]">
           {time} | {address}orange
         </span>
-        <p className="font-medium w-full subtitle text-slate-300 md:text-sm ">
+        <p className="font-medium w-full subtitle text-slate-300 md:text-sm max-sm:text-[10px]">
           {" "}
           {work}
         </p>
@@ -50,15 +50,15 @@ export default function Experience() {
     offset: ["start end", "center start"],
   });
   return (
-    <div className="my-4 mt-4 ">
+    <div className="my-4 lg:mt-4 mb-[10rem]">
       <SitionElem />
-      <h2 className="font-bold text-4xl mb-32 text-slate-400  w-full text-center">
+      <h2 className="font-bold text-4xl mb-10 text-slate-400  w-full text-center max-sm:text-[20px]">
         Experience
       </h2>
-      <div ref={ref} className="w-[75%] mx-auto relative ">
+      <div ref={ref} className="w-[75%] max-sm:w-full mx-auto relative ">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className=" absolute left-9 top-0 w-[4px] h-full bg-slate-300 origin-top "
+          className=" absolute left-9 top-0 w-[3px] h-full bg-slate-300 origin-top "
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
           <DetailsC
@@ -88,14 +88,6 @@ export default function Experience() {
             work="Experienced Freelance Developer JavaScript | React.js | Laravel Specialist | Creating Innovative Web"
             companyLink=""
           />
-        </ul>
-      </div>
-      {/* new */}
-      <div className="w-[75%] mx-auto relative ">
-        <h2 className="font-bold text-4xl mb-32  mt-32 text-slate-400 w-full text-center">
-          Education
-        </h2>
-        <ul>
           <DetailsC
             position="Diploma, Information Technology"
             company="Thika Technical Training Institute"
