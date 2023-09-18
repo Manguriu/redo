@@ -90,7 +90,7 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      <div className=" relative  flex flex-col lg:mt-[6rem] max-xl:mt-[2rem] items-center flex-1 xl:min-h-screen max-xl:py-20">
+      <div className=" relative  flex flex-col lg:mt-[6rem] max-xl:mt-[2rem] items-center flex-1  max-xl:py-[20rem]">
         <img
           width={300}
           height={300}

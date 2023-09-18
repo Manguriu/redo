@@ -12,9 +12,6 @@ export default function Home() {
         <SitionElem />
         <Hero />
       </section>
-      <section className="bg-slate-400 max-sm:mt-[5rem] xl:mt-[2rem] ">
-        <Footer />
-      </section>
 
       <Script id="tawk-to-script">{`
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
