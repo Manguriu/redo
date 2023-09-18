@@ -48,23 +48,18 @@ export default function Hero() {
           {" "}
           Hello there...
         </p>
-        <h1 className="lg:mt-10 text-6xl max-sm:text-[20px] max-sm:leading-[72px] font-bold font-montserrat text-slate-400">
+        <h1 className="lg:mt-10 text-6xl max-sm:text-[20px] max-sm:leading-[32px] font-bold font-montserrat text-slate-400">
           <span className="  relative pr-10  ">My Name Is</span> <br />
-          <span className="text-cyan-600 inline-block lg:mt-3">
+          <span className="text-cyan-600 inline-block lg:mt-3 max-sm:mt-2 ">
             Brian Manguriu
           </span>
         </h1>
-        <h4>
-          <span className="text-red-600 text-3xl inline-block mt-3">
-            \\In development Stage, Coming Soon//
-          </span>
-        </h4>
 
-        <p className="text-lg text-slate-400 sm:text-3xl text-black-800 font-palanquin mt-5">
+        <p className="text-lg text-slate-400 sm:text-3xl text-black-800 font-palanquin mt-5 max-sm:mt-2 ">
           {text}
           <Cursor cursorColor="red" />
         </p>
-        <div className="text-center text-slate-500 py-1 mt-10 font-semibold">
+        <div className="text-center text-slate-500 py-1 mt-10 max-sm:mt-2 font-semibold">
           <a
             href="https://drive.google.com/file/d/11TuqYkJHmzkwOhPIvYI97LwRtD8dwnnM/view?usp=drive_link"
             media="print and (resolution:300dpi)"
@@ -90,7 +85,7 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      <div className=" relative  flex flex-col lg:mt-[6rem] max-xl:mt-[2rem] items-center flex-1  max-xl:py-[20rem]">
+      <div className=" relative  flex flex-col lg:mt-[6rem] max-xl:mt-[2rem] items-center flex-1  max-lg:pb-[10rem]">
         <img
           width={300}
           height={300}

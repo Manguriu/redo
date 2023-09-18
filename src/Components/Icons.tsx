@@ -8,7 +8,12 @@ const Icons = (reference) => {
   });
   return (
     <figure className="absolute left-0 stroke-black">
-      <svg className="-rotate-90" width="75" height="75" viewBox="0 0 100 100">
+      <svg
+        className="-rotate-90 max-sm:w-[40px] max-sm:h-[40px]"
+        width="75"
+        height="75"
+        viewBox="0 0 100 100"
+      >
         <circle
           cx="75"
           cy="50"

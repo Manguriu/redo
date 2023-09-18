@@ -22,7 +22,7 @@ const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
           height={700}
           src={img}
           alt={title}
-          className="w-full h-auto "
+          className="w-full h-auto hover:scale-105 transform transition duration-300 ease-in-out "
         />
       </Link>
       <div className="lg:w-1/2 flex flex-col items-start justify-center pl-6">
@@ -30,7 +30,7 @@ const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
         <Link
           href={link}
           target=""
-          className="hover:underline underline-offset-2"
+          className="hover:underline underline-offset-2 hover:scale-105 transform transition duration-300 ease-in-out"
         >
           <h2 className="my-2 w-full text-left lg:text-4xl font-bold text-slate-400">
             {title}
@@ -40,7 +40,11 @@ const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
           {summary}
         </p>
         <div className="mt-2 flex items-center lg:gap-5 max-sm:gap-10 max-sm:mb-8 max-lg:mb-7">
-          <Link href={github} target="" className="lg:w-10 ">
+          <Link
+            href={github}
+            target=""
+            className="lg:w-10 hover:scale-105 transform transition duration-300 ease-in-out"
+          >
             <SocialIcon
               url="https://github.com"
               className="bg-white rounded-full max-sm:w-5"
@@ -49,7 +53,7 @@ const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
           <Link
             href={link}
             target=""
-            className="ml-4 rounded-lg bg-cyan-500 text-white p-2 px-6  text-lg font-semibold max-sm:text-[10px]"
+            className="ml-4 rounded-lg bg-cyan-500 text-white p-2 px-6  text-lg font-semibold max-sm:text-[10px] hover:scale-105 transform transition duration-300 ease-in-out"
           >
             Go to Project
           </Link>

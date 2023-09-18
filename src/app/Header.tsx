@@ -13,7 +13,7 @@ const CustomLink = ({ href, title, className = "" }) => {
     <Link href={href} className={`${className} relative group `}>
       {title}
       <span
-        className={`  h-[1px] inline-block text-[15px]  w-0 bg-cyan-500 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
+        className={`h-[1px] inline-block text-[15px]  w-0 bg-cyan-500 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
         `}
       >
         &nbsp;&nbsp;
@@ -53,7 +53,7 @@ export default function Header() {
         />
       </motion.div>
 
-      <nav>
+      <nav className="">
         <CustomLink
           href="/"
           title="Home"
