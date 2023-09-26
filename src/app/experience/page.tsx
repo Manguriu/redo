@@ -32,7 +32,7 @@ const DetailsC = ({ position, company, companyLink, time, address, work }) => {
           </a>
         </h3>
         <span className="capitalize font-medium text-slate-300 xs:text-sm max-sm:text-[10px]">
-          {time} | {address}orange
+          {time} | {address}
         </span>
         <p className="font-medium w-full subtitle text-slate-300 md:text-sm max-sm:text-[10px]">
           {" "}
