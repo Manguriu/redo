@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         palanquin: ["Palanquin", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
+        Anton: ["Crimson+Text", "sans-serif"],
       },
       screens: {
         sm: "576px",
