@@ -8,6 +8,9 @@ import react from "../../../public/react.png";
 import lara from "../../../public/lara.png";
 import billing from "../../../public/billing.png";
 import simple from "../../../public/simple.png";
+import shoes from "../../../public/shoes.png";
+import movieclone from "../../../public/movieclone.png";
+import Gallery from "../../../public/Gallery.png";
 
 const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
   return (
@@ -69,6 +72,36 @@ export default function Projects() {
       <SitionElem />
       <section className="w-full mt-9 mb-16 flex flex-col items-center justify-center ">
         <div className="  justify-center max-lg:w-full lg:w-1/5 grid grid-cols-12 gap-24 gap-y-32 max-xl:gap-x-16 max-lg:gap-x-8 max-md:gap-x-8  max-sm:gap-x-0 md:gap-y-24">
+          <div className="col-span-12 ">
+            <ProjectsFeatures
+              title="Shoe store web"
+              type="Featured project"
+              img={shoes}
+              summary="Front-end page for a shoe-ecommerce store that bring out every aspect os an ecommerce webiste still under development"
+              link="https://store1-vert.vercel.app/"
+              github="https://github.com/Manguriu/store1"
+            />
+          </div>
+          <div className="col-span-12 ">
+            <ProjectsFeatures
+              title="movie-clone web"
+              type="Featured project"
+              img={movieclone}
+              summary="Front-end page for a Movie streaming website, not fully functional but under development"
+              link="https://peaceful-sopapillas-a4cdca.netlify.app/"
+              github="https://github.com/Manguriu/HNGxy-movie-discovery-webApp"
+            />
+          </div>
+          <div className="col-span-12 ">
+            <ProjectsFeatures
+              title="image gallery website"
+              type="Featured project"
+              img={Gallery}
+              summary="Front-end page for a image gallery"
+              link="https://gallery-2-nu.vercel.app/"
+              github="https://github.com/Manguriu/Gallery-2"
+            />
+          </div>
           <div className="col-span-12 ">
             <ProjectsFeatures
               title="React Emmorce App"
