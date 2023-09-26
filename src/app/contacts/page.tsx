@@ -9,7 +9,7 @@ export default function Contacts() {
     <>
       <SitionElem />
       <div className="w-full flex flex-col space-y-8 items-center justify-center text-center max-container">
-        <div className="flex cont-container mt-20 font-Anton">
+        <div className="flex max-lg:flex-col cont-container mt-20 font-Anton">
           <div className="flip-card ">
             <div className="flip-card-inner">
               <div className="flip-card-front">
