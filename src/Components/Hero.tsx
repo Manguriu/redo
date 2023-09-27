@@ -43,7 +43,7 @@ export default function Hero() {
 
   return (
     <section className=" w-full flex xl:flex-row flex-col justify-center  lg:gap-10 p-1 max-container">
-      <div className="relative  xl:w-2/5 flex flex-col mt-[8rem] max-xl:mt-[5rem] items-start max-xl:sm:px-2 max-xl:px-2 pt-1 md:px-6 ">
+      <div className="relative  xl:w-2/5 flex flex-col mt-[15rem] max-xl:mt-[5rem] items-start max-xl:sm:px-2 max-xl:px-2 pt-1 md:px-6 ">
         <p className="text-4xl text-cyan-500 font-palanquin max-sm:text-[20px]">
           {" "}
           Hello there...
