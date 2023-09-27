@@ -62,6 +62,22 @@ export default function Experience() {
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
           <DetailsC
+            position="Internship"
+            company="HNG Internship|"
+            time="Current"
+            address=""
+            work="Creating innovative web designs,using | React.js | Next.js and Creating Experimental projects "
+            companyLink=""
+          />
+          <DetailsC
+            position="Freelance Web Developer"
+            company="Freelance"
+            time="May 2022 - Present (1 year 3 months)"
+            address=""
+            work="Experienced Freelance Developer JavaScript | React.js | Next.js | Laravel Specialist | Creating Innovative Web"
+            companyLink=""
+          />
+          <DetailsC
             position="internship"
             company="Thika School of Medical and Health Sciences"
             time="2018-may - 2018 -august"
@@ -71,22 +87,6 @@ export default function Experience() {
             • Data Collection and Analysis.
             • Troubleshooting."
             companyLink="https://tsmhs.co.ke/"
-          />
-          <DetailsC
-            position="Freelance Web Developer"
-            company="Freelance"
-            time="May 2022 - Present (1 year 3 months)"
-            address=""
-            work="Experienced Freelance Developer JavaScript | React.js | Laravel Specialist | Creating Innovative Web"
-            companyLink=""
-          />
-          <DetailsC
-            position="Freelance Web Developer"
-            company="Freelance"
-            time="May 2022 - Present (1 year 3 months)"
-            address=""
-            work="Experienced Freelance Developer JavaScript | React.js | Laravel Specialist | Creating Innovative Web"
-            companyLink=""
           />
           <DetailsC
             position="Diploma, Information Technology"

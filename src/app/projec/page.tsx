@@ -11,6 +11,7 @@ import simple from "../../../public/simple.png";
 import shoes from "../../../public/shoes.png";
 import movieclone from "../../../public/movieclone.png";
 import Gallery from "../../../public/Gallery.png";
+import triostore from "../../../public/triostore.png";
 
 const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
   return (
@@ -72,6 +73,16 @@ export default function Projects() {
       <SitionElem />
       <section className="w-full mt-9 mb-16 flex flex-col items-center justify-center ">
         <div className="  justify-center max-lg:w-full lg:w-1/5 grid grid-cols-12 gap-24 gap-y-32 max-xl:gap-x-16 max-lg:gap-x-8 max-md:gap-x-8  max-sm:gap-x-0 md:gap-y-24">
+          <div className="col-span-12 ">
+            <ProjectsFeatures
+              title="Trio Store Website/from trio team"
+              type="Featured project"
+              img={triostore}
+              summary="The idea is to create a modern-ecommerce website, Uder development,"
+              link="https://triotech-store-web.vercel.app/"
+              github=""
+            />
+          </div>
           <div className="col-span-12 ">
             <ProjectsFeatures
               title="Shoe store web"
