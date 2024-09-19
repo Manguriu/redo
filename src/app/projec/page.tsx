@@ -75,6 +75,16 @@ export default function Projects() {
         <div className="  justify-center max-lg:w-full lg:w-1/5 grid grid-cols-12 gap-24 gap-y-32 max-xl:gap-x-16 max-lg:gap-x-8 max-md:gap-x-8  max-sm:gap-x-0 md:gap-y-24">
           <div className="col-span-12 ">
             <ProjectsFeatures
+              title="King Vac Car and house Rentals"
+              type="Featured project"
+              img={vacturo}
+              summary="The idea is to create a modern car and rental website the website is still in progress"
+              link="https://vaca-turo.vercel.app/"
+              github="https://github.com/Manguriu/Vaca-Turo"
+            />
+          </div>
+          <div className="col-span-12 ">
+            <ProjectsFeatures
               title="Trio Store Website/from trio team"
               type="Featured project"
               img={triostore}
