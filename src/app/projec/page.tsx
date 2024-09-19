@@ -12,6 +12,7 @@ import shoes from "../../../public/shoes.png";
 import movieclone from "../../../public/movieclone.png";
 import Gallery from "../../../public/Gallery.png";
 import triostore from "../../../public/triostore.png";
+import vacturo from "../../../public/vacturo.png";
 
 const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
   return (
