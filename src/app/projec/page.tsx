@@ -13,6 +13,7 @@ import movieclone from "../../../public/movieclone.png";
 import Gallery from "../../../public/Gallery.png";
 import triostore from "../../../public/triostore.png";
 import vacturo from "../../../public/vactuo.png";
+import smartP from "../../../public/smartP.png";
 
 const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
   return (
@@ -74,6 +75,16 @@ export default function Projects() {
       <SitionElem />
       <section className="w-full mt-9 mb-16 flex flex-col items-center justify-center ">
         <div className="  justify-center max-lg:w-full lg:w-1/5 grid grid-cols-12 gap-24 gap-y-32 max-xl:gap-x-16 max-lg:gap-x-8 max-md:gap-x-8  max-sm:gap-x-0 md:gap-y-24">
+          <div className="col-span-12 ">
+            <ProjectsFeatures
+              title="SmartPoultry Hub"
+              type="Featured project"
+              img={smartP}
+              summary="The idea is to create a modern Poultry farm management system"
+              link="https://farm101-analytics-p.vercel.app/"
+              github="https://github.com/Manguriu/Farm101Analytics-P"
+            />
+          </div>
           <div className="col-span-12 ">
             <ProjectsFeatures
               title="King Vac Car and house Rentals"
