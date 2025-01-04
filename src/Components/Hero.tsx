@@ -1,119 +1,97 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-no-comment-textnodes */
-"use client";
-import React, { useState } from "react";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { StaticImageData } from "next/image";
-import HeroPic from "./HeroPic";
+'use client';
+
+import React, { useState } from 'react';
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const skills = [
-  {
-    pic: "/skills/Sql.png",
-    skillsPic: "/skills/Sql.png",
-  },
-  {
-    pic: "/skills/next.png",
-    skillsPic: "/skills/next.png",
-  },
-  {
-    pic: "/skills/javascript.png",
-    skillsPic: "/skills/javascript.png",
-  },
-  {
-    pic: "/skills/react.png",
-    skillsPic: "/skills/react.png",
-  },
-  {
-    pic: "/skills/laravel.png",
-    skillsPic: "/skills/laravel.png",
-  },
+  { name: 'SQL', pic: '/skills/Sql.png' },
+  { name: 'Next.js', pic: '/skills/next.png' },
+  { name: 'JavaScript', pic: '/skills/javascript.png' },
+  { name: 'React', pic: '/skills/react.png' },
+  { name: 'Laravel', pic: '/skills/laravel.png' },
 ];
 
 export default function Hero() {
   const [text] = useTypewriter({
     words: [
-      "Hello im currently Open to work",
-      "Open to Opportunities",
-      "Open-Source contributer",
+      "Hello, I'm currently open to work",
+      "Open to opportunities",
+      "Open-source contributor",
+      "Data analyst"
     ],
+    loop: true,
+    delaySpeed: 2000,
   });
-  const bigimg1 = "skills/code.png";
-  const [bigImage, setBigImage] = useState(bigimg1);
+
+  const [bigImage, setBigImage] = useState('/skills/code.png');
 
   return (
-    <section className=" w-full flex xl:flex-row flex-col justify-center  lg:gap-10 p-1 max-container">
-      <div className="relative  xl:w-2/5 flex flex-col mt-[15rem] max-xl:mt-[5rem] items-start max-xl:sm:px-2 max-xl:px-2 pt-1 md:px-6 ">
-        <p className="text-4xl text-cyan-500 font-palanquin max-sm:text-[20px]">
-          {" "}
-          Hello there...
-        </p>
-        <h1 className="lg:mt-10 text-6xl max-sm:text-[20px] max-sm:leading-[32px] font-bold font-montserrat text-slate-400">
-          <span className="  relative pr-10  ">My Name Is</span> <br />
-          <span className="text-cyan-600 inline-block lg:mt-3 max-sm:mt-2 ">
-            Brian Manguriu
-          </span>
+    <section className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center gap-10 px-4 py-16 bg-gradient-to-br from-gray-900 to-gray-800">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="lg:w-1/2 space-y-6 text-center lg:text-left"
+      >
+        <h1 className="text-4xl lg:text-6xl font-bold text-white">
+          Hello, I'm <span className="text-cyan-400">Brian Manguriu</span>
         </h1>
-
-        <p className="text-lg text-slate-400 sm:text-3xl text-black-800 font-palanquin mt-5 max-sm:mt-2 ">
+        <h2 className="text-2xl lg:text-3xl text-gray-300">
           {text}
-          <Cursor cursorColor="red" />
-        </p>
-        <div className="text-center text-slate-500 py-1 mt-10 max-sm:mt-2 font-semibold">
-          <a
-            href="https://drive.google.com/file/d/11TuqYkJHmzkwOhPIvYI97LwRtD8dwnnM/view?usp=drive_link"
-            media="print and (resolution:300dpi)"
-            target="_blank"
-            role="none"
-          >
-            <button className="button" type="button">
-              <span className="button__text">Resume</span>
-              <span className="button__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 35 35"
-                  id="bdd05811-e15d-428c-bb53-8661459f9307"
-                  data-name="Layer 2"
-                  className="svg"
-                >
-                  <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
-                  <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
-                  <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
-                </svg>
-              </span>
-            </button>
-          </a>
-          <div className="mt-4">
-            {" "}
-            <h1 className="text-2xl">In Development......</h1>
-          </div>
-        </div>
-      </div>
-      <div className=" relative  flex flex-col lg:mt-[6rem] max-xl:mt-[2rem] items-center flex-1  max-lg:pb-[10rem]">
-        <img
-          width={300}
-          height={300}
-          className="relative mx-auto object-cover p-1 hover:scale-105 transform transition duration-300 ease-in-out"
-          src={`${bigImage}`}
-        />
-
-        <h2 className="text-sm font-palanquin text-slate-400 uppercase font-extrabold mt-4 pb-2 tracking-[5px] justify-center items-center max-sm:text-[8px]">
-          // Software developer //
+          <Cursor cursorColor="#22d3ee" />
         </h2>
-        <div className="grid grid-cols-4 sm:gap-4 absolute mt-[25rem] sm:left-[10%] max-sm:px-6 ">
+        <p className="text-lg text-gray-400">
+          Software Developer | Data analyst | Open-Source Enthusiast
+        </p>
+        <Link 
+          href="https://drive.google.com/file/d/11TuqYkJHmzkwOhPIvYI97LwRtD8dwnnM/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-3 bg-cyan-500 text-white font-semibold rounded-full hover:bg-cyan-600 transition duration-300"
+        >
+          View Resume
+        </Link>
+      </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="lg:w-1/2 space-y-8"
+      >
+        <div className="relative w-64 h-64 mx-auto">
+          <Image
+            src={bigImage}
+            alt="Skill showcase"
+            layout="fill"
+            objectFit="contain"
+            className="rounded-lg shadow-xl"
+          />
+        </div>
+        <div className="flex justify-center gap-4 flex-wrap">
           {skills.map((skill, index) => (
-            <div key={index}>
-              <HeroPic
-                imgURL={skill}
-                changeImage={(skill: React.SetStateAction<StaticImageData>) =>
-                  setBigImage(`${skill}`)
-                }
-                bigImage={bigImage}
+            <motion.div
+              key={skill.name}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-16 h-16 relative cursor-pointer"
+              onClick={() => setBigImage(skill.pic)}
+            >
+              <Image
+                src={skill.pic}
+                alt={skill.name}
+                layout="fill"
+                objectFit="contain"
+                className="rounded-md"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
+

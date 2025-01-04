@@ -1,120 +1,79 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-import React from "react";
-import SitionElem from "@/Components/SitionElem";
-import { motion } from "framer-motion";
+'use client'
 
-export default function Contacts() {
+import React from "react"
+import { motion } from "framer-motion"
+import { Github, Linkedin, Mail, Phone } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent } from "@/components/ui/card"
+
+const contactInfo = [
+  { icon: Mail, text: "brianmiruri983@gmail.com", href: "mailto:brianmiruri983@gmail.com" },
+  { icon: Phone, text: "+254743807662", href: "tel:+254743807662" },
+  { icon: Github, text: "Github", href: "https://github.com/Manguriu" },
+  { icon: Linkedin, text: "LinkedIn", href: "https://www.linkedin.com/in/brian-manguriu-3b0b07207/" },
+]
+
+const ContactCard = ({ icon: Icon, text, href }) => (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <Card className="bg-gray-800 border-gray-700">
+      <CardContent className="flex items-center p-4 space-x-4">
+        <Icon className="h-6 w-6 text-cyan-400" />
+        <a href={href} target="_blank" rel="noopener noreferrer" className="text-white hover:text-cyan-400 transition-colors">
+          {text}
+        </a>
+      </CardContent>
+    </Card>
+  </motion.div>
+)
+
+export default function Contact() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle form submission here
+  }
+
   return (
-    <>
-      <SitionElem />
-      <div className="w-full flex flex-col space-y-8 items-center justify-center text-center max-container">
-        <div className="flex max-lg:flex-col cont-container mt-20 font-Anton">
-          <div className="flip-card ">
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <img
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-gmail-8913532-7250524.png"
-                  alt=""
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <div className="flip-card-back">
-                <h2 className="title flex itmes-center justify-center">
-                  Gmail
-                </h2>
-                <p className="subtitle p-8">
-                  Get in touch ::
-                  <br />
-                  Email: brianmiruri983@gmail
-                  <br />
-                  .com
-                </p>
-              </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-4xl mx-auto"
+      >
+        <h1 className="text-4xl font-bold text-center mb-12 text-cyan-400">Get in Touch</h1>
+        
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h2 className="text-2xl font-semibold text-white mb-4">Contact Information</h2>
+            <div className="space-y-4">
+              {contactInfo.map((info, index) => (
+                <ContactCard key={index} {...info} />
+              ))}
             </div>
           </div>
-
-          {/* card 2 */}
-
-          <div className="flip-card">
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <img
-                  src="https://cdn3.iconfinder.com/data/icons/3d-applications/512/app_icons_communication___phone_call_apple_icon_conversation_contacts.png"
-                  alt=""
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <div className="flip-card-back ">
-                <h2 className="title flex itmes-center justify-center">
-                  Phone
-                </h2>
-                <p className="subtitle p-4">
-                  Call
-                  <br />
-                  No. +254743807662
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* card 3 */}
-
-          <div className="flip-card">
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <img
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-github-2950150-2447911.png"
-                  alt=""
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <div className="flip-card-back">
-                <h2 className="title flex itmes-center justify-center">
-                  Github
-                </h2>
-                <p className="subtitle p-4">
-                  Follow Link ::
-                  <br />
-                  Link:{" "}
-                  <a href="https://github.com/Manguriu">
-                    {" "}
-                    <u>Github Account</u>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* card 4 */}
-          <div className="flip-card">
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <img
-                  src="https://static.vecteezy.com/system/resources/previews/009/428/307/original/3d-social-media-icons-linkedin-free-png.png"
-                  alt=""
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <div className="flip-card-back">
-                <h2 className="title flex itmes-center justify-center">
-                  LinkedIn
-                </h2>
-                <p className="subtitle p-4">
-                  LinkedIn Profile ::
-                  <br />
-                  Link:{" "}
-                  <a href="https://www.linkedin.com/in/brian-manguriu-3b0b07207/">
-                    <u>"My Profile"</u>
-                  </a>
-                </p>
-              </div>
-            </div>
+          
+          <div>
+            <h2 className="text-2xl font-semibold text-white mb-4">Send a Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input placeholder="Your Name" className="bg-gray-700 text-white border-gray-600" />
+              <Input placeholder="Your Email" type="email" className="bg-gray-700 text-white border-gray-600" />
+              <Textarea placeholder="Your Message" className="bg-gray-700 text-white border-gray-600" rows={4} />
+              <Button type="submit"  variant="outline" className="w-full">Send Message</Button>
+            </form>
           </div>
         </div>
-      </div>
-    </>
-  );
+        
+        <div className="text-center text-gray-400">
+          <p>I'm always open to new opportunities and collaborations.</p>
+          <p>Let's create something amazing together!</p>
+        </div>
+      </motion.div>
+    </div>
+  )
 }
+

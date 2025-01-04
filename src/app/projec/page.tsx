@@ -1,192 +1,205 @@
-"use client";
-import React from "react";
-import SitionElem from "@/Components/SitionElem";
-import Link from "next/link";
-import Image from "next/image";
-import { SocialIcon } from "react-social-icons";
-import react from "../../../public/react.png";
-import lara from "../../../public/lara.png";
-import billing from "../../../public/billing.png";
-import simple from "../../../public/simple.png";
-import shoes from "../../../public/shoes.png";
-import movieclone from "../../../public/movieclone.png";
-import Gallery from "../../../public/Gallery.png";
-import triostore from "../../../public/triostore.png";
-import vacturo from "../../../public/vactuo.png";
-import smartP from "../../../public/smartP.png";
+'use client'
 
-const ProjectsFeatures = ({ type, title, summary, link, img, github }) => {
+import React, { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { motion, AnimatePresence } from "framer-motion"
+import { Github, ExternalLink, X } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+
+const projects = [
+  {
+    title: "SmartPoultry Hub",
+    type: "Featured project",
+    img: "/smartP.png",
+    summary: "A modern Poultry farm management system",
+    link: "https://farm101-analytics-p.vercel.app/",
+    github: "https://github.com/Manguriu/Farm101Analytics-P",
+    tech: ["React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    title: "King Vac Car and House Rentals",
+    type: "Featured project",
+    img: "/vactuo.png",
+    summary: "A modern car and rental website (in progress)",
+    link: "https://vaca-turo.vercel.app/",
+    github: "https://github.com/Manguriu/Vaca-Turo",
+    tech: ["React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    title: "Trio Store Website",
+    type: "Featured project",
+    img: "/triostore.png",
+    summary: "A modern e-commerce website (under development)",
+    link: "https://triotech-store-web.vercel.app/",
+    github: "",
+    tech: ["React", "Next.js", "Tailwind CSS"]
+  },
+  {
+    title: "Shoe Store Web",
+    type: "Featured project",
+    img: "/shoes.png",
+    summary: "Front-end page for a shoe e-commerce store",
+    link: "https://store1-vert.vercel.app/",
+    github: "https://github.com/Manguriu/store1",
+    tech: ["React", "CSS"]
+  },
+  {
+    title: "Movie Clone Web",
+    type: "Featured project",
+    img: "/movieclone.png",
+    summary: "Front-end page for a Movie streaming website",
+    link: "https://peaceful-sopapillas-a4cdca.netlify.app/",
+    github: "https://github.com/Manguriu/HNGxy-movie-discovery-webApp",
+    tech: ["React", "CSS"]
+  },
+  {
+    title: "Image Gallery Website",
+    type: "Featured project",
+    img: "/Gallery.png",
+    summary: "Front-end page for an image gallery",
+    link: "https://gallery-2-nu.vercel.app/",
+    github: "https://github.com/Manguriu/Gallery-2",
+    tech: ["React", "CSS"]
+  },
+]
+
+const ProjectCard = ({ project, setSelectedProject }) => {
   return (
-    <article className="max-lg:p-6 p-6 max-lg:w-full max-lg:flex-col flex items-center justify-between rounded-3xl max-lg:rounded-2xl shadow-2xl morph">
-      <Link
-        href={link}
-        target="_black"
-        className="lg:w-1/2 cursor-pointer overflow-hidden rounded-lg "
-      >
+    <motion.div
+      layoutId={`card-${project.title}`}
+      className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-shadow duration-300"
+    >
+      <div className="relative h-48 md:h-64">
         <Image
-          width={700}
-          height={700}
-          src={img}
-          alt={title}
-          className="w-full h-auto hover:scale-105 transform transition duration-300 ease-in-out "
+          src={project.img}
+          alt={project.title}
+          layout="fill"
+          objectFit="cover"
+          className="transition-transform duration-300 hover:scale-105"
         />
-      </Link>
-      <div className="lg:w-1/2 flex flex-col items-start justify-center pl-6">
-        <span className="font-medium  text-xl text-cyan-500">{type}</span>
-        <Link
-          href={link}
-          target=""
-          className="hover:underline underline-offset-2 hover:scale-105 transform transition duration-300 ease-in-out"
-        >
-          <h2 className="my-2 w-full text-left lg:text-4xl font-bold text-slate-400">
-            {title}
-          </h2>
-        </Link>
-        <p className="my-2 font-medium text-slate-400 max-sm:text-[12px]">
-          {summary}
-        </p>
-        <div className="mt-2 flex items-center lg:gap-5 max-sm:gap-10 max-sm:mb-8 max-lg:mb-7">
-          <Link
-            href={github}
-            target=""
-            className="lg:w-10 hover:scale-105 transform transition duration-300 ease-in-out"
-          >
-            <SocialIcon
-              url="https://github.com"
-              className="bg-white rounded-full max-sm:w-5"
-            />
-          </Link>
-          <Link
-            href={link}
-            target=""
-            className="ml-4 rounded-lg bg-cyan-500 text-white p-2 px-6  text-lg font-semibold max-sm:text-[10px] hover:scale-105 transform transition duration-300 ease-in-out"
-          >
-            Go to Project
-          </Link>
+      </div>
+      <div className="p-4">
+        <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+        <p className="text-gray-300 text-sm mb-4 line-clamp-2">{project.summary}</p>
+        <div className="flex justify-between items-center">
+          <Button variant="outline" size="sm" onClick={() => setSelectedProject(project)}>
+            Learn More
+          </Button>
+          <div className="flex space-x-2">
+            {project.github && (
+              <Button variant="ghost" size="sm" asChild>
+                <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                  <Github className="h-4 w-4" />
+                  <span className="sr-only">GitHub</span>
+                </Link>
+              </Button>
+            )}
+            <Button variant="ghost" size="sm" asChild>
+              <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-4 w-4" />
+                <span className="sr-only">Visit Project</span>
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
-    </article>
-  );
-};
+    </motion.div>
+  )
+}
 
-export default function Projects() {
+const ProjectModal = ({ project, closeModal }) => {
+  if (!project) return null
+
   return (
-    <>
-      <SitionElem />
-      <section className="w-full mt-9 mb-16 flex flex-col items-center justify-center ">
-        <div className="  justify-center max-lg:w-full lg:w-1/5 grid grid-cols-12 gap-24 gap-y-32 max-xl:gap-x-16 max-lg:gap-x-8 max-md:gap-x-8  max-sm:gap-x-0 md:gap-y-24">
-          <div className="col-span-12 ">
-            <ProjectsFeatures
-              title="SmartPoultry Hub"
-              type="Featured project"
-              img={smartP}
-              summary="The idea is to create a modern Poultry farm management system"
-              link="https://farm101-analytics-p.vercel.app/"
-              github="https://github.com/Manguriu/Farm101Analytics-P"
-            />
+    <motion.div
+      layoutId={`card-${project.title}`}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={closeModal}
+        className="absolute inset-0 bg-black bg-opacity-50"
+      />
+      <div className="bg-gray-800 rounded-lg overflow-hidden w-full max-w-2xl z-10">
+        <div className="relative h-64">
+          <Image
+            src={project.img}
+            alt={project.title}
+            layout="fill"
+            objectFit="cover"
+          />
+          <button
+            onClick={closeModal}
+            className="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full p-2"
+            aria-label="Close modal"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        <div className="p-6">
+          <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
+          <p className="text-gray-300 mb-4">{project.summary}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.map((tech) => (
+              <span key={tech} className="bg-cyan-600 text-white px-2 py-1 rounded text-sm">
+                {tech}
+              </span>
+            ))}
           </div>
-          <div className="col-span-12 ">
-            <ProjectsFeatures
-              title="King Vac Car and house Rentals"
-              type="Featured project"
-              img={vacturo}
-              summary="The idea is to create a modern car and rental website the website is still in progress"
-              link="https://vaca-turo.vercel.app/"
-              github="https://github.com/Manguriu/Vaca-Turo"
-            />
-          </div>
-          <div className="col-span-12 ">
-            <ProjectsFeatures
-              title="Trio Store Website/from trio team"
-              type="Featured project"
-              img={triostore}
-              summary="The idea is to create a modern-ecommerce website, Uder development,"
-              link="https://triotech-store-web.vercel.app/"
-              github=""
-            />
-          </div>
-          <div className="col-span-12 ">
-            <ProjectsFeatures
-              title="Shoe store web"
-              type="Featured project"
-              img={shoes}
-              summary="Front-end page for a shoe-ecommerce store that bring out every aspect os an ecommerce webiste still under development"
-              link="https://store1-vert.vercel.app/"
-              github="https://github.com/Manguriu/store1"
-            />
-          </div>
-          <div className="col-span-12 ">
-            <ProjectsFeatures
-              title="movie-clone web"
-              type="Featured project"
-              img={movieclone}
-              summary="Front-end page for a Movie streaming website, not fully functional but under development"
-              link="https://peaceful-sopapillas-a4cdca.netlify.app/"
-              github="https://github.com/Manguriu/HNGxy-movie-discovery-webApp"
-            />
-          </div>
-          <div className="col-span-12 ">
-            <ProjectsFeatures
-              title="image gallery website"
-              type="Featured project"
-              img={Gallery}
-              summary="Front-end page for a image gallery"
-              link="https://gallery-2-nu.vercel.app/"
-              github="https://github.com/Manguriu/Gallery-2"
-            />
-          </div>
-          <div className="col-span-12 ">
-            <ProjectsFeatures
-              title="React Emmorce App"
-              type="Featured project"
-              img={react}
-              summary="Front-end e-commerce development encompasses responsive design,
-              product catalog display, shopping cart functionality, checkout
-              process facilitation, user authentication and account
-              management, payment gateway integration, dynamic user
-              interactions."
-              link="https://github.com/Manguriu/ecom-react-app"
-              github="https://github.com/Manguriu/ecom-react-app"
-            />
-          </div>
-          <div className="col-span-12">
-            <ProjectsFeatures
-              title="Test Data"
-              type="Featured project"
-              img={simple}
-              summary="dynamic user
-              interactions."
-              link="https://next-js-first-xi.vercel.app/"
-              github="https://github.com/Manguriu/NextJs-first-"
-            />
-          </div>
-          <div className="col-span-12">
-            <ProjectsFeatures
-              title="Simple Billing App"
-              type="Featured project"
-              img={billing}
-              summary=" gateway integration, dynamic user
-              interactions."
-              link="https://billingsitealpha.netlify.app"
-              github="https://github.com/Manguriu/Money-tracker"
-            />
-          </div>
-
-          <div className="col-span-12">
-            <ProjectsFeatures
-              title=" Ecommerce App Backend"
-              type="Featured project"
-              img={lara}
-              summary="Ecom-backend project is a backend implementation for an
-              e-commerce application. It focuses on server-side
-              functionalities, including user management for authentication
-              and authorization."
-              link="https://github.com/Manguriu/Ecom-backend"
-              github="https://github.com/Manguriu/Ecom-backend"
-            />
+          <div className="flex space-x-4">
+            {project.github && (
+              <Button variant="outline" asChild>
+                <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-4 w-4" /> GitHub
+                </Link>
+              </Button>
+            )}
+            <Button variant="outline" asChild>
+              <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-4 w-4" /> Visit Project
+              </Link>
+            </Button>
           </div>
         </div>
-      </section>
-    </>
-  );
+      </div>
+    </motion.div>
+  )
 }
+
+export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null)
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-7xl mx-auto"
+      >
+        <h1 className="text-4xl font-bold text-center mb-12 text-cyan-400">My Projects</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              setSelectedProject={setSelectedProject}
+            />
+          ))}
+        </div>
+      </motion.div>
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            closeModal={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
