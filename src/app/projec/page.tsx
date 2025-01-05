@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import React, { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
-import { Github, ExternalLink, X } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, ExternalLink, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
@@ -15,9 +15,10 @@ const projects = [
     summary: "A modern job tracking system currently in progress",
     link: "https://jb-tracker-01-3n3i.vercel.app/",
     github: "https://github.com/Manguriu/Jb-tracker--01",
-    tech: ["React", "Next.js", "Tailwind CSS", "ShadCn.ui"]
+    tech: ["React", "Next.js", "Tailwind CSS", "ShadCn.ui"],
+    status: "Pending",
   },
-  
+
   {
     title: "VehicleCheck",
     type: "Featured project",
@@ -25,8 +26,9 @@ const projects = [
     summary: "A vehicle check system for crashed and salvage tittled vehicles",
     link: "https://car-titles-checker.vercel.app/",
     github: "https://github.com/Manguriu/car-titles-checker",
-    tech: ["React", "Next.js", "Tailwind CSS", "ShadCn.ui"]
-  },
+    tech: ["React", "Next.js", "Tailwind CSS", "ShadCn.ui"],
+    status: "Pending",
+    },
   {
     title: "SmartPoultry Hub",
     type: "Featured project",
@@ -34,7 +36,8 @@ const projects = [
     summary: "A modern Poultry farm management system",
     link: "https://farm101-analytics-p.vercel.app/",
     github: "https://github.com/Manguriu/Farm101Analytics-P",
-    tech: ["React", "Next.js", "Tailwind CSS"]
+    tech: ["React", "Next.js", "Tailwind CSS"],
+    status: "Pending",
   },
   {
     title: "King Vac Car and House Rentals",
@@ -43,7 +46,8 @@ const projects = [
     summary: "A modern car and rental website (in progress)",
     link: "https://vaca-turo.vercel.app/",
     github: "https://github.com/Manguriu/Vaca-Turo",
-    tech: ["React", "Next.js", "Tailwind CSS"]
+    tech: ["React", "Next.js", "Tailwind CSS"],
+    status: "Pending",
   },
   {
     title: "Trio Store Website",
@@ -52,7 +56,8 @@ const projects = [
     summary: "A modern e-commerce website (under development)",
     link: "https://triotech-store-web.vercel.app/",
     github: "",
-    tech: ["React", "Next.js", "Tailwind CSS"]
+    tech: ["React", "Next.js", "Tailwind CSS"],
+    status: "Pending",
   },
   {
     title: "Shoe Store Web",
@@ -61,7 +66,8 @@ const projects = [
     summary: "Front-end page for a shoe e-commerce store",
     link: "https://store1-vert.vercel.app/",
     github: "https://github.com/Manguriu/store1",
-    tech: ["React", "CSS"]
+    tech: ["React", "CSS"],
+    status: "Complete",
   },
   {
     title: "Movie Clone Web",
@@ -70,7 +76,8 @@ const projects = [
     summary: "Front-end page for a Movie streaming website",
     link: "https://peaceful-sopapillas-a4cdca.netlify.app/",
     github: "https://github.com/Manguriu/HNGxy-movie-discovery-webApp",
-    tech: ["React", "CSS"]
+    tech: ["React", "CSS"],
+    status: "Complete",
   },
   {
     title: "Image Gallery Website",
@@ -79,9 +86,10 @@ const projects = [
     summary: "Front-end page for an image gallery",
     link: "https://gallery-2-nu.vercel.app/",
     github: "https://github.com/Manguriu/Gallery-2",
-    tech: ["React", "CSS"]
+    tech: ["React", "CSS"],
+    status: "Complete",
   },
-]
+];
 
 const ProjectCard = ({ project, setSelectedProject }) => {
   return (
@@ -99,23 +107,48 @@ const ProjectCard = ({ project, setSelectedProject }) => {
         />
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-        <p className="text-gray-300 text-sm mb-4 line-clamp-2">{project.summary}</p>
+        <div className="flex w-full justify-between text-center">
+          <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+          <div
+            className={`px-2 py-2 text-center text-xs font-semibold rounded ${
+              project.status === "Complete"
+                ? "bg-green-500 text-white"
+                : "bg-yellow-500 text-black"
+            }`}
+          >
+            {project.status}
+          </div>
+        </div>
+        <p className="text-gray-300 text-sm mb-4 line-clamp-2 mt-2">
+          {project.summary}
+        </p>
         <div className="flex justify-between items-center">
-          <Button variant="outline" size="sm" onClick={() => setSelectedProject(project)}>
+          <Button
+          variant="ghost"
+            size="sm"
+            onClick={() => setSelectedProject(project)}
+          >
             Learn More
           </Button>
           <div className="flex space-x-2">
             {project.github && (
               <Button variant="ghost" size="sm" asChild>
-                <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Github className="h-4 w-4" />
                   <span className="sr-only">GitHub</span>
                 </Link>
               </Button>
             )}
             <Button variant="ghost" size="sm" asChild>
-              <Link href={project.link} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <ExternalLink className="h-4 w-4" />
                 <span className="sr-only">Visit Project</span>
               </Link>
@@ -124,11 +157,11 @@ const ProjectCard = ({ project, setSelectedProject }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const ProjectModal = ({ project, closeModal }) => {
-  if (!project) return null
+  if (!project) return null;
 
   return (
     <motion.div
@@ -159,11 +192,16 @@ const ProjectModal = ({ project, closeModal }) => {
           </button>
         </div>
         <div className="p-6">
-          <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
+          <h2 className="text-2xl font-bold text-white mb-2">
+            {project.title}
+          </h2>
           <p className="text-gray-300 mb-4">{project.summary}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tech.map((tech) => (
-              <span key={tech} className="bg-cyan-600 text-white px-2 py-1 rounded text-sm">
+              <span
+                key={tech}
+                className="bg-cyan-600 text-white px-2 py-1 rounded text-sm"
+              >
                 {tech}
               </span>
             ))}
@@ -171,13 +209,21 @@ const ProjectModal = ({ project, closeModal }) => {
           <div className="flex space-x-4">
             {project.github && (
               <Button variant="outline" asChild>
-                <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Github className="mr-2 h-4 w-4" /> GitHub
                 </Link>
               </Button>
             )}
             <Button variant="outline" asChild>
-              <Link href={project.link} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <ExternalLink className="mr-2 h-4 w-4" /> Visit Project
               </Link>
             </Button>
@@ -185,11 +231,11 @@ const ProjectModal = ({ project, closeModal }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
@@ -199,7 +245,9 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
         className="max-w-7xl mx-auto"
       >
-        <h1 className="text-4xl font-bold text-center mb-12 text-cyan-400">My Projects</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-cyan-400">
+          My Projects
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard
@@ -219,6 +267,5 @@ export default function Projects() {
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }
-
