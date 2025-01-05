@@ -8,10 +8,14 @@ import { motion } from 'framer-motion';
 
 const skills = [
   { name: 'SQL', pic: '/skills/Sql.png' },
+  { name: 'Data Analysis', pic: '/skills/dataanalysis.png' },
+  { name: "Car diag/Fixing(Hobby)", pic: "/skills/mechanic.png" },
   { name: 'Next.js', pic: '/skills/next.png' },
   { name: 'JavaScript', pic: '/skills/javascript.png' },
   { name: 'React', pic: '/skills/react.png' },
   { name: 'Laravel', pic: '/skills/laravel.png' },
+ 
+
 ];
 
 export default function Hero() {
@@ -20,7 +24,8 @@ export default function Hero() {
       "Hello, I'm currently open to work",
       "Open to opportunities",
       "Open-source contributor",
-      "Data analyst"
+      "Data analyst",
+      "Car Enthusiast/Mechanic as a Hobby"
     ],
     loop: true,
     delaySpeed: 2000,
@@ -44,7 +49,7 @@ export default function Hero() {
           <Cursor cursorColor="#22d3ee" />
         </h2>
         <p className="text-lg text-gray-400">
-        Software Developer | Data analyst | Car Enthusiast/Mechanic
+        Software Developer | Data analyst | Car Enthusiast/Mechanic as a Hobby
         </p>
         <Link 
           href="https://drive.google.com/file/d/11TuqYkJHmzkwOhPIvYI97LwRtD8dwnnM/view?usp=drive_link"

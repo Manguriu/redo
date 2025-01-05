@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="space-y-4">
             <h3 className="text-xl font-bold">Brian Manguriu</h3>
-            <p className="text-gray-400">Software Developer | Data analyst | Car Enthusiast/Mechanic</p>
+            <p className="text-gray-400">Software Developer | Data analyst | Car Enthusiast/Mechanic as a Hobby</p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <motion.div
