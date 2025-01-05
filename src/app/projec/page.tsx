@@ -9,6 +9,25 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
+    title: "Job Tracker Dashboard",
+    type: "Featured project",
+    img: "/jobcheck.png",
+    summary: "A modern job tracking system currently in progress",
+    link: "https://jb-tracker-01-3n3i.vercel.app/",
+    github: "https://github.com/Manguriu/Jb-tracker--01",
+    tech: ["React", "Next.js", "Tailwind CSS", "ShadCn.ui"]
+  },
+  
+  {
+    title: "VehicleCheck",
+    type: "Featured project",
+    img: "/carChecker.png",
+    summary: "A vehicle check system for crashed and salvage tittled vehicles",
+    link: "https://car-titles-checker.vercel.app/",
+    github: "https://github.com/Manguriu/car-titles-checker",
+    tech: ["React", "Next.js", "Tailwind CSS", "ShadCn.ui"]
+  },
+  {
     title: "SmartPoultry Hub",
     type: "Featured project",
     img: "/smartP.png",

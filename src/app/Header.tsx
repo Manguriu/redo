@@ -7,12 +7,16 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { SocialIcon } from 'react-social-icons';
 
-const CustomLink = ({ href, title, className = '' }) => {
+const CustomLink = ({ href, title, className = '', onClick }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link
+      href={href}
+      className={`${className} relative group`}
+      onClick={onClick} // Handle click to close menu
+    >
       {title}
       <span
         className={`h-[2px] inline-block bg-cyan-500 absolute left-0 -bottom-0.5 
@@ -45,6 +49,10 @@ export default function Header() {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false); // Close the menu
+  };
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -54,10 +62,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/">
               <Image
                 src="/logo.svg"
@@ -76,8 +81,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 title={item.title}
-                className="text-lg font-medium hover:text-cyan-400 transition-colors"
-              />
+                className="text-lg font-medium hover:text-cyan-400 transition-colors" onClick={undefined}              />
             ))}
           </nav>
 
@@ -110,13 +114,35 @@ export default function Header() {
             >
               {isMenuOpen ? (
                 // Close Icon
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
                 // Hamburger Icon
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </motion.button>
@@ -141,6 +167,7 @@ export default function Header() {
                   href={item.href}
                   title={item.title}
                   className="block px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white transition-colors"
+                  onClick={closeMenu} // Close menu on click
                 />
               ))}
             </div>

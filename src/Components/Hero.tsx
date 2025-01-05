@@ -44,7 +44,7 @@ export default function Hero() {
           <Cursor cursorColor="#22d3ee" />
         </h2>
         <p className="text-lg text-gray-400">
-          Software Developer | Data analyst | Open-Source Enthusiast
+        Software Developer | Data analyst | Car Enthusiast/Mechanic
         </p>
         <Link 
           href="https://drive.google.com/file/d/11TuqYkJHmzkwOhPIvYI97LwRtD8dwnnM/view?usp=drive_link"
@@ -71,7 +71,7 @@ export default function Hero() {
             className="rounded-lg shadow-xl"
           />
         </div>
-        <div className="flex justify-center gap-4 flex-wrap">
+        <div className="flex justify-center gap-3 flex-wrap">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
