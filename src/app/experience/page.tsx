@@ -8,7 +8,7 @@ const DetailsC = ({ position, company, companyLink, time, address, work }) => {
   const ref = useRef(null)
   return (
     <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-full mx-auto flex flex-col items-start justify-between">
-      <Card className="w-full bg-gray-800 border-gray-700">
+      <Card className="w-full bg-gray-300 border-gray-800">
         <CardContent className="p-6">
           <motion.div
             initial={{ y: 50 }}
@@ -17,14 +17,14 @@ const DetailsC = ({ position, company, companyLink, time, address, work }) => {
           >
             <h3 className="capitalize font-bold text-2xl text-cyan-400 mb-2">
               {position} &nbsp;
-              <a href={companyLink} target="_blank" rel="noopener noreferrer" className="capitalize text-cyan-300 hover:underline">
+              <a href={companyLink} target="_blank" rel="noopener noreferrer" className="capitalize text-cyan-500 hover:underline">
                 @{company}
               </a>
             </h3>
-            <span className="capitalize font-medium text-gray-400 mb-2 block">
+            <span className="capitalize font-medium text-gray-900 mb-2 block">
               {time} | {address}
             </span>
-            <p className="font-medium text-gray-300 w-full">{work}</p>
+            <p className="font-medium text-gray-900 w-full">{work}</p>
           </motion.div>
         </CardContent>
       </Card>

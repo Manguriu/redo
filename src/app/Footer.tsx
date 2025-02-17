@@ -17,12 +17,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-gray-200 text-gray-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="space-y-4">
             <h3 className="text-xl font-bold">Brian Manguriu</h3>
-            <p className="text-gray-400">Software Developer | Data analyst | Car Enthusiast/Mechanic as a Hobby</p>
+            <p className="text-gray-900">Software Developer | Data analyst | Car Enthusiast/Mechanic as a Hobby</p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <motion.div
@@ -33,7 +33,7 @@ export default function Footer() {
                   <SocialIcon
                     url={link.url}
                     network={link.network}
-                    fgColor="white"
+                    fgColor="black"
                     bgColor="transparent"
                     style={{ height: 30, width: 30 }}
                   />
@@ -43,8 +43,8 @@ export default function Footer() {
           </div>
       
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400">
+        <div className="mt-8 pt-8 border-t border-gray-900 text-center">
+          <p className="text-gray-900">
             &copy; {currentYear} Brian Manguriu. All rights reserved.
           </p>
         </div>

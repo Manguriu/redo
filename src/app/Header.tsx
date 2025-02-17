@@ -50,7 +50,7 @@ export default function Header() {
   };
 
   const closeMenu = () => {
-    setIsMenuOpen(false); // Close the menu
+    setIsMenuOpen(false); 
   };
 
   return (
@@ -58,7 +58,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 bg-gray-900 text-white shadow-lg"
+      className="sticky top-0 z-50 bg-gray-200 text-gray-900 shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -96,7 +96,7 @@ export default function Header() {
                 <SocialIcon
                   url={link.url}
                   network={link.network}
-                  fgColor="white"
+                  fgColor="dark"
                   bgColor="transparent"
                   style={{ height: 30, width: 30 }}
                 />
@@ -167,7 +167,7 @@ export default function Header() {
                   href={item.href}
                   title={item.title}
                   className="block px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white transition-colors"
-                  onClick={closeMenu} // Close menu on click
+                  onClick={closeMenu} 
                 />
               ))}
             </div>

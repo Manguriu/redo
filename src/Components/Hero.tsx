@@ -1,21 +1,19 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import ResumeRequestButton from "./ResumeButton";
 
 const skills = [
-  { name: 'SQL', pic: '/skills/Sql.png' },
-  { name: 'Data Analysis', pic: '/skills/dataanalysis.png' },
+  { name: "SQL", pic: "/skills/Sql.png" },
+  { name: "Data Analysis", pic: "/skills/dataanalysis.png" },
   { name: "Car diag/Fixing(Hobby)", pic: "/skills/mechanic.png" },
-  { name: 'Next.js', pic: '/skills/next.png' },
-  { name: 'JavaScript', pic: '/skills/javascript.png' },
-  { name: 'React', pic: '/skills/react.png' },
-  { name: 'Laravel', pic: '/skills/laravel.png' },
- 
-
+  { name: "Next.js", pic: "/skills/next.png" },
+  { name: "JavaScript", pic: "/skills/javascript.png" },
+  { name: "React", pic: "/skills/react.png" },
+  { name: "Laravel", pic: "/skills/laravel.png" },
 ];
 
 export default function Hero() {
@@ -25,43 +23,36 @@ export default function Hero() {
       "Open to opportunities",
       "Open-source contributor",
       "Data analyst",
-      "Car Enthusiast/Mechanic as a Hobby"
+      "Enthusiast/Mech as a Hobby",
     ],
     loop: true,
     delaySpeed: 2000,
   });
 
-  const [bigImage, setBigImage] = useState('/skills/code.png');
+  const [bigImage, setBigImage] = useState("/skills/code.png");
 
   return (
-    <section className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center gap-10 px-4 py-16 bg-gradient-to-br from-gray-900 to-gray-800">
-      <motion.div 
+    <section className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center gap-10 px-4 py-16 bg-gradient-to-br from-gray-200 to-gray-100">
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="lg:w-1/2 space-y-6 text-center lg:text-left"
       >
-        <h1 className="text-4xl lg:text-6xl font-bold text-white">
+        <h1 className="text-4xl lg:text-6xl font-bold text-gray-900">
           Hello, I'm <span className="text-cyan-400">Brian Manguriu</span>
         </h1>
-        <h2 className="text-2xl lg:text-3xl text-gray-300">
+        <h2 className="text-2xl lg:text-3xl text-gray-900">
           {text}
           <Cursor cursorColor="#22d3ee" />
         </h2>
-        <p className="text-lg text-gray-400">
-        Software Developer | Data analyst | Car Enthusiast/Mechanic as a Hobby
+        <p className="text-lg text-gray-900">
+          Software Developer | Data analyst | Enthusiast/Mech as a Hobby
         </p>
-        <Link 
-          href="https://drive.google.com/file/d/11TuqYkJHmzkwOhPIvYI97LwRtD8dwnnM/view?usp=drive_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 bg-cyan-500 text-white font-semibold rounded-full hover:bg-cyan-600 transition duration-300"
-        >
-          View Resume
-        </Link>
+        <ResumeRequestButton />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -99,4 +90,3 @@ export default function Hero() {
     </section>
   );
 }
-

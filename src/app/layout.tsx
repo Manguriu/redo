@@ -2,6 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "./Header";
 import Footer from "./Footer";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const metadata: Metadata = {
   title: "Manguriu",
@@ -15,7 +18,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#000000]/80 ">
+      <body className="">
+      <ToastContainer />
         <Header />
         {children}
         <Footer />

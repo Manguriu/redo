@@ -19,7 +19,7 @@ const skills = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-200 to-gray-100 text-gray-900 py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function About() {
         </h1>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <Card className="bg-gray-800 border-gray-700">
+          <Card className="bg-gray-300 border-gray-700">
             <CardContent className="p-6">
               <h2 className="text-2xl font-semibold mb-4 text-cyan-400">
                 Professional Journey
@@ -79,12 +79,12 @@ export default function About() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-800 border-gray-700">
+          <Card className="bg-gray-300 border-gray-700">
             <CardContent className="p-6">
               <h2 className="text-2xl font-semibold mb-4 text-cyan-400">
                 My Story
               </h2>
-              <p className="text-gray-300">
+              <p className="text-gray-900">
                 Im on a journey fueled by curiosity and creativity, where every
                 project feels like taking a new car out on the open road. To me,
                 coding is like tuning an engine—every piece has to fit

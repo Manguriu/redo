@@ -102,7 +102,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-200 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -113,18 +113,18 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
-            <h2 className="text-2xl font-semibold text-white mb-4">Contact Information</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h2>
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} key={index}>
-                  <Card className="bg-gray-800 border-gray-700">
+                  <Card className="bg-gray-300 border-gray-700">
                     <CardContent className="flex items-center p-4 space-x-4">
                       <info.icon className="h-6 w-6 text-cyan-400" />
                       <a
                         href={info.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white hover:text-cyan-400 transition-colors"
+                        className="text-gray-900 hover:text-cyan-400 transition-colors"
                       >
                         {info.text}
                       </a>
@@ -136,12 +136,12 @@ export default function Contact() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-white mb-4">Send a Message</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Send a Message</h2>
             <form onSubmit={sendMailHandler} className="space-y-4">
               <Input
                 name="name"
                 placeholder="Your Name"
-                className="bg-gray-700 text-white border-gray-600"
+                className="bg-gray-700 text-white border-gray-600 p-2"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -150,7 +150,7 @@ export default function Contact() {
                 name="email"
                 placeholder="Your Email"
                 type="email"
-                className="bg-gray-700 text-white border-gray-600"
+                className="bg-gray-700 text-white border-gray-600 p-2"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -158,13 +158,13 @@ export default function Contact() {
               <Textarea
                 name="message"
                 placeholder="Your Message"
-                className="bg-gray-700 text-white border-gray-600"
+                className="bg-gray-700 text-white border-gray-600 p-2"
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
                 required
               />
-              <Button type="submit" variant="outline" className="w-full" disabled={loading}>
+              <Button type="submit" variant="outline" className="w-full bg-cyan-400" disabled={loading}>
                 {loading ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
@@ -172,7 +172,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="text-center text-gray-400">
+        <div className="text-center text-gray-600">
           <p>I'm always open to new opportunities and collaborations.</p>
           <p>Let's create something amazing together!</p>
         </div>
