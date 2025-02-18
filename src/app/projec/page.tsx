@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -11,6 +11,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
@@ -155,16 +165,31 @@ export default function Projects() {
 }
 
 const ProjectGrid = ({ data, category }) => {
+  const itemsPerPage = 3;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const selectedProjects = data.slice(startIndex, startIndex + itemsPerPage);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <motion.div
       key={category}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
+      className="max-w-7xl mx-auto"
     >
       <div className="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {data.map((project) => (
-          <Card key={project.id} className="bg-gray-300 text-gray-900 shadow-lg">
+        {selectedProjects.map((project) => (
+          <Card
+            key={project.id}
+            className="bg-gradient-to-br from-gray-100 to-gray-100 text-gray-900 shadow-lg"
+          >
             <CardHeader>
               <img
                 src={project.img}
@@ -172,27 +197,27 @@ const ProjectGrid = ({ data, category }) => {
                 className="w-full h-40 object-cover rounded-lg"
               />
               <div className="flex items-center justify-between mt-2">
-              <CardTitle className="mt-2 text-lg font-semibold">
-                {project.title}
-              </CardTitle>
-              <div
-                className={`p-2 rounded-md font-semibold text-sm w-auto ${
-                  project.status === "Pending"
-                    ? "bg-gray-200 text-gray-700"
-                    : project.status === "Complete"
-                    ? "bg-green-100 text-green-600"
-                    : project.status === "Start up"
-                    ? "bg-yellow-100 text-yellow-600"
-                    : "bg-red-100 text-red-600"
-                }`}
-              >
-                {project.status}
-              </div>
+                <CardTitle className="mt-2 text-lg font-semibold">
+                  {project.title}
+                </CardTitle>
+                <div
+                  className={`p-2 rounded-md font-semibold text-sm w-auto ${
+                    project.status === "Pending"
+                      ? "bg-red-400 text-gray-900"
+                      : project.status === "Complete"
+                      ? "bg-green-100 text-green-600"
+                      : project.status === "Start up"
+                      ? "bg-yellow-100 text-yellow-600"
+                      : "bg-red-100 text-red-600"
+                  }`}
+                >
+                  {project.status}
+                </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-300 text-sm">{project.summary}</p>
-              <div className="flex flex-wrap mt-3 gap-2">
+              <p className="text-gray-900 text-sm">{project.summary}</p>
+              <div className="flex flex-wrap mt-1 gap-2">
                 {project.tech.map((tech, index) => (
                   <Badge key={index} className="bg-blue-600 text-white p-1">
                     {tech}
@@ -200,7 +225,7 @@ const ProjectGrid = ({ data, category }) => {
                 ))}
               </div>
             </CardContent>
-            <CardFooter className="flex justify-between mt-4">
+            <CardFooter className="flex justify-between mt-2">
               <a
                 href={project.link}
                 target="_blank"
@@ -220,6 +245,57 @@ const ProjectGrid = ({ data, category }) => {
             </CardFooter>
           </Card>
         ))}
+      </div>
+
+      <div className="mt-4">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                href="#"
+                onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                className={
+                  currentPage === 1 ? "cursor-not-allowed opacity-50" : ""
+                }
+              />
+            </PaginationItem>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <PaginationItem key={page}>
+                <PaginationLink
+                  href="#"
+                  isActive={page === currentPage}
+                  onClick={() => handlePageChange(page)}
+                  className={
+                    page === currentPage ? "bg-cyan-500 text-white p-2" : ""
+                  }
+                >
+                  {page}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+
+            {totalPages > 5 && currentPage < totalPages - 2 && (
+              <PaginationItem>
+                <PaginationEllipsis />
+              </PaginationItem>
+            )}
+
+            <PaginationItem>
+              <PaginationNext
+                href="#"
+                onClick={() =>
+                  handlePageChange(Math.min(currentPage + 1, totalPages))
+                }
+                className={
+                  currentPage === totalPages
+                    ? "cursor-not-allowed opacity-50"
+                    : ""
+                }
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
       </div>
     </motion.div>
   );

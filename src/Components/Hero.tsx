@@ -32,12 +32,13 @@ export default function Hero() {
   const [bigImage, setBigImage] = useState("/skills/code.png");
 
   return (
-    <section className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center gap-10 px-4 py-16 bg-gradient-to-br from-gray-200 to-gray-100">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 py-4 bg-gradient-to-br from-gray-100 to-gray-300">
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="lg:w-1/2 space-y-6 text-center lg:text-left"
+        className="w-full max-w-3xl space-y-6"
       >
         <h1 className="text-4xl lg:text-6xl font-bold text-gray-900">
           Hello, I'm <span className="text-cyan-400">Brian Manguriu</span>
@@ -56,7 +57,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="lg:w-1/2 space-y-8"
+        className="w-full max-w-xl mt-8 space-y-6"
       >
         <div className="relative w-64 h-64 mx-auto">
           <Image
@@ -64,11 +65,12 @@ export default function Hero() {
             alt="Skill showcase"
             layout="fill"
             objectFit="contain"
-            className="rounded-lg shadow-xl"
+            className="p-4"
           />
         </div>
-        <div className="flex justify-center gap-3 flex-wrap">
-          {skills.map((skill, index) => (
+
+        <div className="flex justify-center gap-4 flex-wrap">
+          {skills.map((skill) => (
             <motion.div
               key={skill.name}
               whileHover={{ scale: 1.1 }}
