@@ -124,7 +124,7 @@ const analyticsData = [
     title: "Kwanza Tukule Analysis",
     img: "/kwanza tukule.png",
     summary: "A data analysis project assessing food security initiatives.",
-    link: "https://github.com/Manguriu/daata101",
+    link: "https://colab.research.google.com/drive/1Zkz_Kjs7ZeroVcJTDUU9Xc6kgk2S6mqQ?usp=sharing",
     github: "https://github.com/Manguriu/daata101",
     tech: ["Python"],
     status: "Complete",
